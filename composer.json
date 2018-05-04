@@ -1,7 +1,9 @@
 {
-    "name": "laravel-admin-ext/api-tester",
-    "description": "Api tester for laravel",
+    "name": "wolfeeeg/api-tester",
+    "description": "Api tester for laravel with fix logs",
     "type": "library",
+    "stability": "stable",
+    "version": "1.0.1",
     "keywords": ["laravel-admin", "api", "tester"],
     "homepage": "https://github.com/laravel-admin-extensions/api-tester",
     "license": "MIT",
