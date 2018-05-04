@@ -18,7 +18,7 @@ class ApiTesterController extends Controller
 
             $content->body(view('api-tester::index', [
                 'routes' => $tester->getRoutes(),
-//                'logs'   => ApiLogger::load(),
+                'logs'   => ApiLogger::load(),
             ]));
         });
     }
@@ -49,6 +49,7 @@ class ApiTesterController extends Controller
         $tester = new ApiTester();
 
         $response = $tester->call($method, $uri, $parameters, $user);
+        ApiLogger::log($method, $uri, $parameters, $user);
 
         return [
             'status'    => true,
