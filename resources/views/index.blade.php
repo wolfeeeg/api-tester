@@ -190,7 +190,7 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">Routes</a></li>
-                {{--<li><a href="#tab_2" data-toggle="tab" aria-expanded="true">History</a></li>--}}
+                <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">History</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab_1">
@@ -224,25 +224,25 @@
 
                 </div>
                 <!-- /.tab-pane -->
-                {{--<div class="tab-pane" id="tab_2">--}}
-                    {{--<ul class="nav nav-pills nav-stacked routes" style="margin-top: 5px;">--}}
-                        {{--@foreach($logs as $route)--}}
-                            {{--@php ($color = Encore\Admin\ApiTester\ApiTester::$methodColors[$route['method']])--}}
-                            {{--<li class="route-item"--}}
-                                {{--data-uri="{{ $route['uri'] }}"--}}
-                                {{--data-method="{{ $route['method'] }}"--}}
-                                {{--data-method-color="{{$color}}"--}}
-                                {{--data-parameters='{!! $route['parameters'] !!}' >--}}
+                <div class="tab-pane" id="tab_2">
+                    <ul class="nav nav-pills nav-stacked routes" style="margin-top: 5px;">
+                        @foreach($logs as $route)
+                            @php ($color = Encore\Admin\ApiTester\ApiTester::$methodColors[$route['method']])
+                            <li class="route-item"
+                                data-uri="{{ $route['uri'] }}"
+                                data-method="{{ $route['method'] }}"
+                                data-method-color="{{$color}}"
+                                data-parameters='{!! $route['parameters'] !!}' >
 
-                                {{--<a href="#"><b>{{ $route['uri'] }}</b>--}}
-                                    {{--<div class="pull-right">--}}
-                                        {{--<span class="label bg-{{ $color }}">{{ $route['method'] }}</span>--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                        {{--@endforeach--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
+                                <a href="#"><b>{{ $route['uri'] }}</b>
+                                    <div class="pull-right">
+                                        <span class="label bg-{{ $color }}">{{ $route['method'] }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
                 <!-- /.tab-pane -->
             </div>
             <!-- /.tab-content -->
